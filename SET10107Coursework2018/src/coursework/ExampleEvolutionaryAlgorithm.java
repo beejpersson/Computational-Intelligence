@@ -1,9 +1,7 @@
 package coursework;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.ListIterator;
 
 import model.Fitness;
 import model.Individual;

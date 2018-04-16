@@ -1,8 +1,6 @@
 package coursework;
 
-import coursework.Parameters.Replace;
-import coursework.Parameters.Reproduce;
-import coursework.Parameters.Select;
+
 import model.Fitness;
 import model.LunarParameters.DataSet;
 import model.NeuralNetwork;
@@ -29,34 +27,25 @@ public class StartNoGui {
 		 * Note you should use a maximum of 20,0000 evaluations for your experiments 
 		 */
 		
+		//Parameters.maxEvaluations = 20000; // Used to terminate the EA after this many generations
+		//Parameters.popSize = 200; // Population Size
+
+		//number of hidden nodes in the neural network
+		//Parameters.setHidden(5);
+		
+		double averageTrainingFitness = 0;
+		double averageTestFitness = 0;
+		
 		PrintWriter pw = new PrintWriter(new File("Test.csv"));
 		StringBuilder sb = new StringBuilder();
 		sb.append(Parameters.printParams());
 		sb.append('\n');
-		sb.append("Test,");
-		sb.append("Fitness");
+		sb.append("Test Number, ");
+		sb.append("Training Fitness, ");
+		sb.append("Test Fitness");
 		sb.append('\n');
 		
-		for (int i = 1; i < 11; i++) {
-		
-			// Selection parameters
-			Parameters.selectionAlgorithm = Select.RANDOM;
-			Parameters.selectTournamentSize = 20;
-			
-			// Reproduction parameters
-			Parameters.reproductionAlgorithm = Reproduce.ONEPTCROSSOVER;
-			Parameters.numberOfCutPoints = 1;
-			
-			// Replacement parameters
-			Parameters.replacementAlgorithm = Replace.WORST;
-			Parameters.replaceTournamentSize = 20;
-			
-			Parameters.maxEvaluations = 20000; // Used to terminate the EA after this many generations
-			Parameters.popSize = 200; // Population Size
-	
-			//number of hidden nodes in the neural network
-			Parameters.setHidden(5);
-			
+		for (int i = 1; i < 2; i++) {
 			//Set the data set for training 
 			Parameters.setDataSet(DataSet.Training);
 			
@@ -71,6 +60,13 @@ public class StartNoGui {
 			 * (these will have been saved to disk in the project default directory) 
 			 */
 			System.out.println(nn.best);
+			
+			double trainingFitness = nn.best.fitness;
+			averageTrainingFitness += trainingFitness;
+			sb.append(i);
+			sb.append(", ");
+			sb.append(trainingFitness);
+			sb.append(", ");
 		
 		
 		
@@ -78,14 +74,24 @@ public class StartNoGui {
 			 * We now need to test the trained network on the unseen test Set
 			 */
 			Parameters.setDataSet(DataSet.Test);
-			double fitness = Fitness.evaluate(nn);
-			System.out.println("Fitness on " + Parameters.getDataSet() + " " + fitness);
+			double testFitness = Fitness.evaluate(nn);
+			System.out.println("Fitness on " + Parameters.getDataSet() + " " + testFitness);
 			
-			sb.append(i);
-			sb.append(", ");
-			sb.append(fitness);
+			averageTestFitness += testFitness;
+			sb.append(testFitness);
 			sb.append('\n');
+			
+			System.out.println("Test " + (i) + " out of 10 complete.");
 		}
+		
+		averageTrainingFitness /= 10;
+		averageTestFitness /= 10;
+		sb.append('\n');
+		sb.append("Average:, ");
+		sb.append(averageTrainingFitness);
+		sb.append(", ");
+		sb.append(averageTestFitness);
+		sb.append('\n');
 		
 		pw.write(sb.toString());
 		pw.close();

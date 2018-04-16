@@ -23,7 +23,7 @@ public class Parameters {
 		RANDOM,
 		TOURNAMENT
 	}
-	public static Select selectionAlgorithm = Select.RANDOM;
+	public static Select selectionAlgorithm = Select.TOURNAMENT;
 	public static double selectTournamentSize = 20;
 	
 	// Reproduce parameters
@@ -34,8 +34,8 @@ public class Parameters {
 		UNIFORMCROSSOVER,
 		ARITHMETICCROSSOVER
 	}
-	public static Reproduce reproductionAlgorithm = Reproduce.EXACTCOPIES;
-	public static int numberOfCutPoints = 2;
+	public static Reproduce reproductionAlgorithm = Reproduce.UNIFORMCROSSOVER;
+	public static int numberOfCutPoints = 1;
 	
 	// Replacement parameters
 	public enum Replace {
@@ -43,10 +43,10 @@ public class Parameters {
 		WORST,
 		TOURNAMENT
 	}
-	public static Replace replacementAlgorithm = Replace.RANDOM;
+	public static Replace replacementAlgorithm = Replace.TOURNAMENT;
 	public static double replaceTournamentSize = 20;
 		
-	public static int popSize = 40;
+	public static int popSize = 200;
 	public static int maxEvaluations = 20000;
 	
 	// Parameters for mutation 
