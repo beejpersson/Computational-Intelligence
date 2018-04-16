@@ -17,6 +17,34 @@ public class Parameters {
 	private static int numGenes = calculateNumGenes();
 	public static double minGene = -3; // specifies minimum and maximum weight values 
 	public static double maxGene = +3;
+	
+	// Selection parameters
+	public enum Select {
+		RANDOM,
+		TOURNAMENT
+	}
+	public static Select selectionAlgorithm = Select.RANDOM;
+	public static double selectTournamentSize = 20;
+	
+	// Reproduce parameters
+	public enum Reproduce {
+		EXACTCOPIES,
+		ONEPTCROSSOVER,
+		NPTCROSSOVER,
+		UNIFORMCROSSOVER,
+		ARITHMETICCROSSOVER
+	}
+	public static Reproduce reproductionAlgorithm = Reproduce.EXACTCOPIES;
+	public static int numberOfCutPoints = 2;
+	
+	// Replacement parameters
+	public enum Replace {
+		RANDOM,
+		WORST,
+		TOURNAMENT
+	}
+	public static Replace replacementAlgorithm = Replace.RANDOM;
+	public static double replaceTournamentSize = 20;
 		
 	public static int popSize = 40;
 	public static int maxEvaluations = 20000;
