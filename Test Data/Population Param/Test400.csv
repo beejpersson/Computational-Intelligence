@@ -1,0 +1,31 @@
+numHidden,5,
+numGenes,48,
+minGene,-3,
+maxGene,3,
+selectionAlgorithm, TOURNAMENT,
+selectTournamentSize,20,
+reproductionAlgorithm, UNIFORMCROSSOVER,
+numberOfCutPoints,5,
+replacementAlgorithm, TOURNAMENT,
+replaceTournamentSize,20,
+popSize,400,
+maxEvaluations,10000,
+mutateRate,0.01,
+mutateChange,0.05,
+seed,1.52391E+12,
+random, java.util.Random@4554617c,
+neuralNetworkClass, class coursework.ExampleEvolutionaryAlgorithm,
+,,
+Test Number, Training Fitness, Test Fitness
+1,0.104593197,0.248930131
+2,0.120982725,0.238861577
+3,0.129068544,0.242605934
+4,0.099769754,0.209648805
+5,0.130223207,0.251979129
+6,0.121806096,0.249829463
+7,0.076001209,0.218683394
+8,0.114476599,0.23002038
+9,0.127522489,0.282956725
+10,0.11743325,0.231646396
+,,
+Average:,0.114187707,0.240516193

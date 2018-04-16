@@ -35,7 +35,7 @@ public class Parameters {
 		ARITHMETICCROSSOVER
 	}
 	public static Reproduce reproductionAlgorithm = Reproduce.UNIFORMCROSSOVER;
-	public static int numberOfCutPoints = 1;
+	public static int numberOfCutPoints = 5;
 	
 	// Replacement parameters
 	public enum Replace {
@@ -47,7 +47,7 @@ public class Parameters {
 	public static double replaceTournamentSize = 20;
 		
 	public static int popSize = 200;
-	public static int maxEvaluations = 20000;
+	public static int maxEvaluations = 10000;
 	
 	// Parameters for mutation 
 	// Rate = probability of changing a gene
