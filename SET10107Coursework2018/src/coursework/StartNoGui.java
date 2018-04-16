@@ -33,12 +33,11 @@ public class StartNoGui {
 		StringBuilder sb = new StringBuilder();
 		sb.append(Parameters.printParams());
 		sb.append('\n');
-		sb.append("Test");
-		sb.append('\t');
+		sb.append("Test,");
 		sb.append("Fitness");
 		sb.append('\n');
 		
-		for (int i = 0; i < 10; i++) {
+		for (int i = 1; i < 11; i++) {
 		
 			// Selection parameters
 			Parameters.selectionAlgorithm = Select.RANDOM;
@@ -75,7 +74,6 @@ public class StartNoGui {
 		
 		
 		
-		
 			/**
 			 * We now need to test the trained network on the unseen test Set
 			 */
@@ -84,7 +82,7 @@ public class StartNoGui {
 			System.out.println("Fitness on " + Parameters.getDataSet() + " " + fitness);
 			
 			sb.append(i);
-			sb.append('\t');
+			sb.append(", ");
 			sb.append(fitness);
 			sb.append('\n');
 		}

@@ -97,7 +97,7 @@ public class Parameters {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			str += name + " \t" + val + "\r\n";
+			str += name + ", " + val + "\r\n";
 			
 		}
 		return str;
