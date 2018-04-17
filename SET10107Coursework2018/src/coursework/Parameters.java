@@ -34,7 +34,7 @@ public class Parameters {
 		UNIFORMCROSSOVER,
 		ARITHMETICCROSSOVER
 	}
-	public static Reproduce reproductionAlgorithm = Reproduce.UNIFORMCROSSOVER;
+	public static Reproduce reproductionAlgorithm = Reproduce.NPTCROSSOVER;
 	public static int numberOfCutPoints = 5;
 	
 	// Replacement parameters
@@ -43,7 +43,7 @@ public class Parameters {
 		WORST,
 		TOURNAMENT
 	}
-	public static Replace replacementAlgorithm = Replace.TOURNAMENT;
+	public static Replace replacementAlgorithm = Replace.RANDOM;
 	public static double replaceTournamentSize = 20;
 		
 	public static int popSize = 200;

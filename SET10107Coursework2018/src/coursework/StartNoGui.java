@@ -33,13 +33,13 @@ public class StartNoGui {
 		//number of hidden nodes in the neural network
 		//Parameters.setHidden(5);
 		
-		double size = 0;
-		for (size = 5; size < 25; size+=5) {
+		int cutPoints = 0;
+		for (cutPoints = 2; cutPoints < 11; cutPoints+=2) {
 		double averageTrainingFitness = 0;
 		double averageTestFitness = 0;
 		
-		Parameters.replaceTournamentSize = size;
-		PrintWriter pw = new PrintWriter(new File(size + " size.csv"));
+		Parameters.numberOfCutPoints = cutPoints;
+		PrintWriter pw = new PrintWriter(new File(cutPoints + " cut points.csv"));
 		StringBuilder sb = new StringBuilder();
 		sb.append(Parameters.printParams());
 		sb.append('\n');
