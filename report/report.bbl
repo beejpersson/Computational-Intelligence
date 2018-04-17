@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{3}
+\begin{thebibliography}{4}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -70,6 +70,20 @@
 \newblock In \bibinfo{booktitle}{\emph{Foundations of genetic algorithms}}.
   Vol.~\bibinfo{volume}{1}. \bibinfo{publisher}{Elsevier},
   \bibinfo{pages}{69--93}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Panchal, Ganatra, Kosta, and Panchal}{Panchal
+  et~al\mbox{.}}{2011}]%
+        {panchal11}
+\bibfield{author}{\bibinfo{person}{G Panchal}, \bibinfo{person}{A Ganatra},
+  \bibinfo{person}{YP Kosta}, {and} \bibinfo{person}{D Panchal}.}
+  \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Review on methods of selecting number of hidden
+  nodes in artificial neural network}.
+\newblock \bibinfo{journal}{\emph{International Journal of Computer Theory and
+  Engineering}} \bibinfo{volume}{3}, \bibinfo{number}{2}
+  (\bibinfo{year}{2011}), \bibinfo{pages}{332--337}.
 \newblock
 
 
